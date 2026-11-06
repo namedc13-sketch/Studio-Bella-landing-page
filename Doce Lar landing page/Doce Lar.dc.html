@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doce Lar Confeitaria Artesanal | Bolos, Doces &amp; Sobremesas</title>
+<meta name="description" content="Confeitaria artesanal com bolos personalizados, brigadeiros gourmet, cupcakes e sobremesas feitas com ingredientes nobres e muito afeto. Encomende pelo WhatsApp!">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Doce Lar Confeitaria Artesanal | Bolos, Doces &amp; Sobremesas</title>
+<meta name="description" content="Confeitaria artesanal com bolos personalizados, brigadeiros gourmet, cupcakes e sobremesas feitas com ingredientes nobres e muito afeto. Encomende pelo WhatsApp!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #FFF6E5;
+  color: #3A0A1A;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  color: #6B1530;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+a:hover { color: #4A0E22; }
+
+/* Focus Accessibility */
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid #F4B823;
+  outline-offset: 3px;
+}
+
+/* Header & Nav */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 24px clamp(20px, 6vw, 88px);
+  position: relative;
+  z-index: 10;
+  background: #6B1530;
+  border-bottom: 1px solid rgba(244, 184, 35, 0.2);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 28px);
+  flex-wrap: wrap;
+  font-size: 15px;
+  font-weight: 500;
+}
+.nav-link {
+  color: #FFF6E5;
+  transition: color 0.15s ease;
+}
+.nav-link:hover {
+  color: #F4B823;
+}
+.nav-cta {
+  background: #F4B823;
+  color: #3A0A1A;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.nav-cta:hover {
+  background: #FFD04F;
+  color: #26050F;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(244, 184, 35, 0.35);
+}
+
+/* Buttons */
+.btn-primary {
+  background: #F4B823;
+  color: #3A0A1A;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 16px 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.btn-primary:hover {
+  background: #FFD04F;
+  color: #26050F;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(244, 184, 35, 0.4);
+}
+.btn-secondary {
+  background: rgba(255, 246, 229, 0.12);
+  color: #FFF6E5;
+  border: 1.5px solid rgba(255, 246, 229, 0.35);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn-secondary:hover {
+  background: rgba(255, 246, 229, 0.22);
+  border-color: #F4B823;
+  color: #F4B823;
+}
+.btn-card {
+  background: #6B1530;
+  color: #FFF6E5;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.btn-card:hover {
+  background: #4A0E22;
+  color: #FFF6E5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(107, 21, 48, 0.28);
+}
+
+/* Product Cards */
+.product-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(107, 21, 48, 0.08);
+  border: 1px solid rgba(107, 21, 48, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(107, 21, 48, 0.16);
+  border-color: rgba(244, 184, 35, 0.4);
+}
+
+/* Category Cards */
+.cat-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 28px 24px;
+  border: 1px solid rgba(107, 21, 48, 0.08);
+  box-shadow: 0 6px 20px rgba(107, 21, 48, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.cat-card:hover {
+  transform: translateY(-4px);
+  border-color: #6B1530;
+  box-shadow: 0 12px 28px rgba(107, 21, 48, 0.12);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 32px 28px;
+  border: 1px solid rgba(107, 21, 48, 0.08);
+  box-shadow: 0 8px 24px rgba(107, 21, 48, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  transition: transform 0.2s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-3px);
+}
+
+/* FAQ Details */
+details.faq-item {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid rgba(107, 21, 48, 0.1);
+  padding: 20px 24px;
+  box-shadow: 0 4px 14px rgba(107, 21, 48, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+details.faq-item[open] {
+  border-color: #6B1530;
+  box-shadow: 0 8px 20px rgba(107, 21, 48, 0.08);
+}
+summary.faq-question {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+  color: #6B1530;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  user-select: none;
+}
+summary.faq-question::-webkit-details-marker {
+  display: none;
+}
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(244, 184, 35, 0.25);
+  color: #6B1530;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+details[open] .faq-icon {
+  transform: rotate(45deg);
+  background: #6B1530;
+  color: #FFF6E5;
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+}
+.floating-whatsapp:hover {
+  background: #20ba5a;
+  color: #FFFFFF;
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+}
+@media (max-width: 640px) {
+  .floating-whatsapp span { display: none; }
+  .floating-whatsapp {
+    padding: 16px;
+    border-radius: 50%;
+    right: 18px;
+    bottom: 18px;
+  }
+}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="font-family:'DM Sans',sans-serif;color:#3A0A1A;background:#FFF6E5;min-height:100vh">
+
+  <!-- HEADER -->
+  <header class="header-nav">
+    <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <div style="width:40px;height:40px;border-radius:50%;background:#F4B823;display:flex;align-items:center;justify-content:center;color:#3A0A1A">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <div>
+        <div style="font-family:'DM Serif Display',serif;font-size:26px;line-height:1;color:#F4B823;letter-spacing:-0.02em">Doce Lar</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,246,229,0.75)">Confeitaria Artesanal</div>
+      </div>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegação Principal">
+      <a href="#destaques" class="nav-link">Destaques</a>
+      <a href="#categorias" class="nav-link">Cardápio</a>
+      <a href="#diferenciais" class="nav-link">Por que a Doce Lar</a>
+      <a href="#como-pedir" class="nav-link">Como Encomendar</a>
+      <a href="#depoimentos" class="nav-link">Avaliações</a>
+      <a href="#contato" class="nav-link">Contato</a>
+    </nav>
+
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20encomenda%20na%20Doce%20Lar." target="_blank" rel="noopener noreferrer" class="nav-cta" aria-label="Fazer Encomenda pelo WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+      <span>Fazer Encomenda</span>
+    </a>
+  </header>
+
+  <!-- 01 HERO SECTION -->
+  <section data-screen-label="01 Topo" style="background:#6B1530;color:#FFF6E5;padding:0 clamp(20px,6vw,88px) 0;position:relative;overflow:hidden">
+    <!-- Decorative background ambient glow -->
+    <div style="position:absolute;top:-120px;right:-120px;width:500px;height:500px;background:radial-gradient(circle,rgba(244,184,35,0.18) 0%,transparent 70%);border-radius:50%;pointer-events:none" aria-hidden="true"></div>
+    <div style="position:absolute;bottom:-100px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,208,79,0.12) 0%,transparent 70%);border-radius:50%;pointer-events:none" aria-hidden="true"></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(36px,5vw,64px);align-items:center;padding:clamp(48px,7vw,88px) 0 clamp(48px,6vw,72px);max-width:1200px;margin:0 auto;position:relative;z-index:2">
+      <div style="display:flex;flex-direction:column;gap:24px;align-items:flex-start">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(244,184,35,0.18);border:1px solid rgba(244,184,35,0.4);color:#F4B823;padding:8px 18px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">
+          <span>✨</span> Feito à mão com afeto e receitas nobres
+        </div>
+        <h1 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(40px,5.8vw,68px);line-height:1.06;margin:0;text-wrap:balance">
+          Bolos, doces e sobremesas <span style="color:#F4B823;position:relative;display:inline-block">artesanais</span>
+        </h1>
+        <p style="font-size:clamp(18px,1.8vw,21px);line-height:1.55;margin:0;max-width:480px;color:rgba(255,246,229,0.92);text-wrap:pretty">
+          Adoçamos seus momentos especiais com receitas exclusivas, chocolate nobre e frutas selecionadas. Qualidade, sabor inigualável e carinho em cada encomenda.
+        </p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:8px">
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20encomenda%20com%20a%20Doce%20Lar." target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span>Fale pelo WhatsApp</span>
+          </a>
+          <a href="#destaques" class="btn-secondary">
+            <span>Ver Cardápio</span>
+            <span style="font-size:18px">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- HERO IMAGE SLOT -->
+      <div style="position:relative;max-width:500px;width:100%;justify-self:center">
+        <div style="position:absolute;inset:-12px;border-radius:212px;border:2px dashed rgba(244,184,35,0.45);pointer-events:none" aria-hidden="true"></div>
+        <div style="height:clamp(380px,46vw,460px);width:100%;position:relative;border-radius:200px;overflow:hidden;box-shadow:0 24px 48px -12px rgba(0,0,0,0.4)">
+          <image-slot
+            id="hero"
+            shape="rounded"
+            radius="200"
+            placeholder="Foto principal: bolo artesanal com frutas frescas"
+            src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+            credit="Photo by Alexandra Gornago on Unsplash"
+            credit-href="https://unsplash.com/@alexagornago">
+          </image-slot>
+        </div>
+        <div style="position:absolute;bottom:24px;left:-16px;background:#FFF6E5;color:#3A0A1A;padding:12px 20px;border-radius:18px;box-shadow:0 12px 28px rgba(0,0,0,0.25);display:flex;align-items:center;gap:12px;border:1px solid rgba(244,184,35,0.4)">
+          <span style="font-size:24px">⭐</span>
+          <div>
+            <div style="font-weight:700;font-size:15px;line-height:1.2;color:#6B1530">4.9 de Avaliação</div>
+            <div style="font-size:12px;color:#6B5058">+400 clientes apaixonados</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRUST BAR / QUALITY HIGHLIGHTS -->
+    <div style="max-width:1200px;margin:0 auto;padding:32px 0 36px;border-top:1px solid rgba(244,184,35,0.3);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px">
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="width:48px;height:48px;border-radius:14px;background:rgba(244,184,35,0.15);display:flex;align-items:center;justify-content:center;flex:none">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F4B823" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l-1 8a5 5 0 0 1-10 0z"/><path d="M12 16v5M8 21h8"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:16px;color:#FFF6E5">100% Artesanal</div>
+          <div style="font-size:13px;color:rgba(255,246,229,0.75)">Feito à mão, do zero</div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="width:48px;height:48px;border-radius:14px;background:rgba(244,184,35,0.15);display:flex;align-items:center;justify-content:center;flex:none">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F4B823" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:16px;color:#FFF6E5">Ingredientes Nobres</div>
+          <div style="font-size:13px;color:rgba(255,246,229,0.75)">Chocolate puro e frutas frescas</div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="width:48px;height:48px;border-radius:14px;background:rgba(244,184,35,0.15);display:flex;align-items:center;justify-content:center;flex:none">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F4B823" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:16px;color:#FFF6E5">Entrega Pontual</div>
+          <div style="font-size:13px;color:rgba(255,246,229,0.75)">Embalagens seguras para festa</div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="width:48px;height:48px;border-radius:14px;background:rgba(244,184,35,0.15);display:flex;align-items:center;justify-content:center;flex:none">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F4B823" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:16px;color:#FFF6E5">Personalizado</div>
+          <div style="font-size:13px;color:rgba(255,246,229,0.75)">Do tema e sabor da sua festa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 DESTAQUES DO CARDÁPIO -->
+  <section id="destaques" data-screen-label="02 Destaques" style="padding:clamp(64px,8vw,100px) clamp(20px,6vw,88px)">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+      <div style="display:flex;flex-direction:column;gap:12px;text-align:center;max-width:720px;margin:0 auto">
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6B1530">Cardápio Especial</div>
+        <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(34px,4.5vw,52px);line-height:1.1;margin:0;color:#6B1530">
+          Nossos destaques mais amados
+        </h2>
+        <p style="font-size:clamp(16px,1.6vw,19px);color:#5A2B3A;line-height:1.5;margin:0">
+          Cada doce é preparado com dedicação artesanal, receita exclusiva e ingredientes de primeiríssima qualidade.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px">
+
+        <!-- 1. BRIGADEIROS GOURMET -->
+        <article class="product-card">
+          <div style="height:250px;position:relative;overflow:hidden">
+            <span style="position:absolute;top:16px;left:16px;background:#F4B823;color:#3A0A1A;font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;z-index:3;box-shadow:0 4px 10px rgba(0,0,0,0.15)">Mais Vendido ⭐</span>
+            <image-slot
+              id="brigadeiros"
+              shape="rect"
+              placeholder="Foto: brigadeiros gourmet"
+              src="https://images.unsplash.com/photo-1765946024017-3995b2aa99eb?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+              credit="Photo by Jonathan Borba on Unsplash"
+              credit-href="https://unsplash.com/@jonathanborba">
+            </image-slot>
+          </div>
+          <div style="padding:28px 24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;width:100%">
+              <h3 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;margin:0;color:#6B1530">Brigadeiros gourmet</h3>
+              <span style="font-weight:700;color:#6B1530;font-size:15px;background:#FFF6E5;padding:4px 10px;border-radius:8px">Cento ou caixa</span>
+            </div>
+            <p style="margin:0;line-height:1.55;color:#5A2B3A;flex:1">
+              Chocolate belga nobre e confeitos crocantes, enrolados à mão um a um. Sabores clássicos, ninho com nutella, pistache e caramelo flor de sal.
+            </p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20encomendar%20brigadeiros%20gourmet%20da%20Doce%20Lar." target="_blank" rel="noopener noreferrer" class="btn-card">
+              <span>Encomendar Brigadeiros</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. BOLO DE MORANGO -->
+        <article class="product-card">
+          <div style="height:250px;position:relative;overflow:hidden">
+            <span style="position:absolute;top:16px;left:16px;background:#6B1530;color:#FFF6E5;font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;z-index:3;box-shadow:0 4px 10px rgba(0,0,0,0.2)">O Queridinho 🍓</span>
+            <image-slot
+              id="morango"
+              shape="rect"
+              placeholder="Foto: bolo de morango"
+              src="https://images.unsplash.com/photo-1561924607-7e9b21fb51ec?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+              credit="Photo by Monika Grabkowska on Unsplash"
+              credit-href="https://unsplash.com/@moniqa">
+            </image-slot>
+          </div>
+          <div style="padding:28px 24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;width:100%">
+              <h3 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;margin:0;color:#6B1530">Bolo de morango</h3>
+              <span style="font-weight:700;color:#6B1530;font-size:15px;background:#FFF6E5;padding:4px 10px;border-radius:8px">A partir de 1,5 kg</span>
+            </div>
+            <p style="margin:0;line-height:1.55;color:#5A2B3A;flex:1">
+              Massa fofinha de pão de ló leve, creme suave especial da casa e morangos frescos suculentos. O clássico que nunca decepciona em festas.
+            </p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20encomendar%20o%20bolo%20de%20morango%20da%20Doce%20Lar." target="_blank" rel="noopener noreferrer" class="btn-card">
+              <span>Encomendar Bolo</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. CUPCAKES ARTESANAIS -->
+        <article class="product-card">
+          <div style="height:250px;position:relative;overflow:hidden">
+            <span style="position:absolute;top:16px;left:16px;background:#F4B823;color:#3A0A1A;font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;z-index:3;box-shadow:0 4px 10px rgba(0,0,0,0.15)">Festa &amp; Presente 🧁</span>
+            <image-slot
+              id="cupcakes"
+              shape="rect"
+              placeholder="Foto: cupcakes"
+              src="https://images.unsplash.com/photo-1486428128344-5413e434ad35?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+              credit="Photo by Brooke Lark on Unsplash"
+              credit-href="https://unsplash.com/@brookelark">
+            </image-slot>
+          </div>
+          <div style="padding:28px 24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;width:100%">
+              <h3 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;margin:0;color:#6B1530">Cupcakes decorados</h3>
+              <span style="font-weight:700;color:#6B1530;font-size:15px;background:#FFF6E5;padding:4px 10px;border-radius:8px">Kits com 6 ou 12</span>
+            </div>
+            <p style="margin:0;line-height:1.55;color:#5A2B3A;flex:1">
+              Massa amanteigada macia com recheios generosos e cobertura cremosa em bico russo. Perfeitos para aniversários temáticos e lembranças doces.
+            </p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20encomendar%20cupcakes%20da%20Doce%20Lar." target="_blank" rel="noopener noreferrer" class="btn-card">
+              <span>Encomendar Cupcakes</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. CHEESECAKE DE FRUTAS VERMELHAS -->
+        <article class="product-card">
+          <div style="height:250px;position:relative;overflow:hidden">
+            <span style="position:absolute;top:16px;left:16px;background:#6B1530;color:#FFF6E5;font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;z-index:3;box-shadow:0 4px 10px rgba(0,0,0,0.2)">Sobremesa Especial 🍒</span>
+            <image-slot
+              id="cheesecake"
+              shape="rect"
+              placeholder="Foto: cheesecake de frutas vermelhas"
+              src="https://images.unsplash.com/photo-1562023692-08eeed28f5ab?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+              credit="Photo by Diana Light on Unsplash"
+              credit-href="https://unsplash.com/@dianalight">
+            </image-slot>
+          </div>
+          <div style="padding:28px 24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;width:100%">
+              <h3 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;margin:0;color:#6B1530">Cheesecake de frutas</h3>
+              <span style="font-weight:700;color:#6B1530;font-size:15px;background:#FFF6E5;padding:4px 10px;border-radius:8px">Serve até 10 fatias</span>
+            </div>
+            <p style="margin:0;line-height:1.55;color:#5A2B3A;flex:1">
+              Base crocante amanteigada, creme de queijo sedoso assado lentamente e coulis artesanal de morangos, amoras e framboesas frescas.
+            </p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20encomendar%20a%20cheesecake%20de%20frutas%20vermelhas." target="_blank" rel="noopener noreferrer" class="btn-card">
+              <span>Encomendar Cheesecake</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. DOCES FINOS & MACARONS -->
+        <article class="product-card">
+          <div style="height:250px;position:relative;overflow:hidden">
+            <span style="position:absolute;top:16px;left:16px;background:#F4B823;color:#3A0A1A;font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;z-index:3;box-shadow:0 4px 10px rgba(0,0,0,0.15)">Alta Confeitaria ✨</span>
+            <image-slot
+              id="doces-finos"
+              shape="rect"
+              placeholder="Foto: doces finos e macarons"
+              src="https://images.unsplash.com/photo-1563767524024-9e1fc32cd5e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+              credit="Photo by Deva Williamson on Unsplash"
+              credit-href="https://unsplash.com/@biglaughkitchen">
+            </image-slot>
+          </div>
+          <div style="padding:28px 24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;width:100%">
+              <h3 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;margin:0;color:#6B1530">Doces finos &amp; macarons</h3>
+              <span style="font-weight:700;color:#6B1530;font-size:15px;background:#FFF6E5;padding:4px 10px;border-radius:8px">Casamentos &amp; Festas</span>
+            </div>
+            <p style="margin:0;line-height:1.55;color:#5A2B3A;flex:1">
+              Casquinha crocante e delicada com recheios nobres de pistache, frutas vermelhas, baunilha de Madagascar e chocolate 70%.
+            </p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20encomendar%20doces%20finos%20e%20macarons." target="_blank" rel="noopener noreferrer" class="btn-card">
+              <span>Encomendar Doces Finos</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 6. BOLO DE CHOCOLATE TRUFADO -->
+        <article class="product-card">
+          <div style="height:250px;position:relative;overflow:hidden">
+            <span style="position:absolute;top:16px;left:16px;background:#6B1530;color:#FFF6E5;font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;z-index:3;box-shadow:0 4px 10px rgba(0,0,0,0.2)">Chocolatudo 🍫</span>
+            <image-slot
+              id="choc-cake"
+              shape="rect"
+              placeholder="Foto: bolo de chocolate trufado"
+              src="https://images.unsplash.com/photo-1514056052883-d017fddd0426?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+              credit="Photo by Brooke Lark on Unsplash"
+              credit-href="https://unsplash.com/@brookelark">
+            </image-slot>
+          </div>
+          <div style="padding:28px 24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;width:100%">
+              <h3 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;margin:0;color:#6B1530">Bolo chocolate trufado</h3>
+              <span style="font-weight:700;color:#6B1530;font-size:15px;background:#FFF6E5;padding:4px 10px;border-radius:8px">A partir de 1,5 kg</span>
+            </div>
+            <p style="margin:0;line-height:1.55;color:#5A2B3A;flex:1">
+              Massa intensa de cacau 100%, recheio cremoso trufado meio amargo e cobertura aveludada de ganache brilhante com morangos.
+            </p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20encomendar%20o%20bolo%20de%20chocolate%20trufado." target="_blank" rel="noopener noreferrer" class="btn-card">
+              <span>Encomendar Bolo Trufado</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 CATEGORIAS DO CARDÁPIO -->
+  <section id="categorias" style="background:#FFF0D6;padding:clamp(60px,7vw,88px) clamp(20px,6vw,88px);border-top:1px solid rgba(107,21,48,0.08);border-bottom:1px solid rgba(107,21,48,0.08)">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+        <div>
+          <span style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6B1530">Variedades</span>
+          <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(30px,4vw,46px);margin:8px 0 0;color:#6B1530">Categorias de encomendas</h2>
+        </div>
+        <p style="margin:0;max-width:440px;color:#5A2B3A;font-size:16px;line-height:1.5">
+          Atendemos desde celebrações íntimas em família até grandes festas de casamento e aniversários com produção exclusiva.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+        <div class="cat-card">
+          <span style="font-size:32px">🎂</span>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:22px;margin:0;color:#6B1530">Bolos Decorados</h3>
+          <p style="margin:0;font-size:14px;line-height:1.5;color:#5A2B3A">Bolos confeitados, naked cakes, bentô cakes e bolos temáticos personalizados para a sua festa.</p>
+        </div>
+
+        <div class="cat-card">
+          <span style="font-size:32px">🍫</span>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:22px;margin:0;color:#6B1530">Centos de Docinhos</h3>
+          <p style="margin:0;font-size:14px;line-height:1.5;color:#5A2B3A">Brigadeiros tradicionais e gourmet, beijinho de coco queimado, bicho de pé e camafeu de nozes.</p>
+        </div>
+
+        <div class="cat-card">
+          <span style="font-size:32px">🥧</span>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:22px;margin:0;color:#6B1530">Tortas &amp; Sobremesas</h3>
+          <p style="margin:0;font-size:14px;line-height:1.5;color:#5A2B3A">Cheesecakes, banoffee cremosa, torta de limão siciliano com merengue suíço e sobremesas na taça.</p>
+        </div>
+
+        <div class="cat-card">
+          <span style="font-size:32px">🎁</span>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:22px;margin:0;color:#6B1530">Kits Presente &amp; Lembranças</h3>
+          <p style="margin:0;font-size:14px;line-height:1.5;color:#5A2B3A">Caixas decoradas com laço de cetim, brownies recheados, cupcakes e mimos corporativos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 POR QUE A DOCE LAR? (DIFERENCIAIS & NÚMEROS) -->
+  <section id="diferenciais" style="background:#6B1530;color:#FFF6E5;padding:clamp(64px,8vw,100px) clamp(20px,6vw,88px)">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px;align-items:center">
+        <div>
+          <span style="font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#F4B823">Nosso Compromisso</span>
+          <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,4vw,50px);line-height:1.12;margin:12px 0 20px;color:#FFF6E5">
+            O segredo do sabor que apaixona na primeira mordida
+          </h2>
+          <p style="font-size:18px;line-height:1.6;color:rgba(255,246,229,0.9);margin:0 0 28px">
+            Na Doce Lar, não usamos misturas prontas nem conservantes químicos. Cada doce é preparado sob encomenda, respeitando o tempo certo de cada ingrediente para chegar fresquinho e impecável até você.
+          </p>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20as%20encomendas%20da%20Doce%20Lar." target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <span>Conversar com a Confeiteira</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(244,184,35,0.25);border-radius:20px;padding:28px 24px">
+            <div style="font-family:'DM Serif Display',serif;font-size:42px;color:#F4B823;line-height:1">+1.800</div>
+            <div style="font-weight:700;font-size:17px;margin:8px 0 4px">Encomendas entregues</div>
+            <div style="font-size:14px;color:rgba(255,246,229,0.75)">Adoçando aniversários e momentos únicos.</div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(244,184,35,0.25);border-radius:20px;padding:28px 24px">
+            <div style="font-family:'DM Serif Display',serif;font-size:42px;color:#F4B823;line-height:1">5 Anos</div>
+            <div style="font-weight:700;font-size:17px;margin:8px 0 4px">De tradição artesanal</div>
+            <div style="font-size:14px;color:rgba(255,246,229,0.75)">Receitas aprimoradas com carinho.</div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(244,184,35,0.25);border-radius:20px;padding:28px 24px">
+            <div style="font-family:'DM Serif Display',serif;font-size:42px;color:#F4B823;line-height:1">100%</div>
+            <div style="font-weight:700;font-size:17px;margin:8px 0 4px">Chocolate nobre</div>
+            <div style="font-size:14px;color:rgba(255,246,229,0.75)">Sem gordura hidrogenada ou misturas.</div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(244,184,35,0.25);border-radius:20px;padding:28px 24px">
+            <div style="font-family:'DM Serif Display',serif;font-size:42px;color:#F4B823;line-height:1">4.9 ★</div>
+            <div style="font-weight:700;font-size:17px;margin:8px 0 4px">Satisfação máxima</div>
+            <div style="font-size:14px;color:rgba(255,246,229,0.75)">Avaliações verificadas de clientes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 COMO FUNCIONA SUA ENCOMENDA -->
+  <section id="como-pedir" style="padding:clamp(64px,8vw,100px) clamp(20px,6vw,88px)">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+      <div style="text-align:center;max-width:680px;margin:0 auto">
+        <span style="font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6B1530">Passo a Passo</span>
+        <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,4vw,48px);margin:8px 0 12px;color:#6B1530">Como fazer seu pedido</h2>
+        <p style="color:#5A2B3A;font-size:17px;line-height:1.5;margin:0">Prático, rápido e com atendimento personalizado direto pelo WhatsApp.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px">
+        <div style="background:#FFFFFF;border-radius:24px;padding:36px 28px;border:1px solid rgba(107,21,48,0.1);box-shadow:0 8px 24px rgba(107,21,48,0.06);position:relative">
+          <div style="font-family:'DM Serif Display',serif;font-size:48px;color:#F4B823;line-height:1;margin-bottom:12px">01</div>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:#6B1530;margin:0 0 12px">Escolha os Sabores</h3>
+          <p style="margin:0;line-height:1.55;color:#5A2B3A">
+            Navegue pelo nosso cardápio ou conte-nos sua ideia. Escolha os tipos de doces, massas, recheios e quantidade de pessoas.
+          </p>
+        </div>
+
+        <div style="background:#FFFFFF;border-radius:24px;padding:36px 28px;border:1px solid rgba(107,21,48,0.1);box-shadow:0 8px 24px rgba(107,21,48,0.06);position:relative">
+          <div style="font-family:'DM Serif Display',serif;font-size:48px;color:#F4B823;line-height:1;margin-bottom:12px">02</div>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:#6B1530;margin:0 0 12px">Combine os Detalhes</h3>
+          <p style="margin:0;line-height:1.55;color:#5A2B3A">
+            Definimos data, horário, decorações personalizadas e se você prefere retirar no ateliê ou receber via entrega segura.
+          </p>
+        </div>
+
+        <div style="background:#FFFFFF;border-radius:24px;padding:36px 28px;border:1px solid rgba(107,21,48,0.1);box-shadow:0 8px 24px rgba(107,21,48,0.06);position:relative">
+          <div style="font-family:'DM Serif Display',serif;font-size:48px;color:#F4B823;line-height:1;margin-bottom:12px">03</div>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:#6B1530;margin:0 0 12px">Receba &amp; Comemore</h3>
+          <p style="margin:0;line-height:1.55;color:#5A2B3A">
+            Sua encomenda é preparada fresca no dia do evento e entregue em embalagens seguras, pronta para brilhar na sua mesa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 DEPOIMENTOS DE CLIENTES -->
+  <section id="depoimentos" style="background:#FFF0D6;padding:clamp(64px,8vw,100px) clamp(20px,6vw,88px)">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+      <div style="text-align:center;max-width:680px;margin:0 auto">
+        <span style="font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6B1530">Depoimentos</span>
+        <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,4vw,48px);margin:8px 0 12px;color:#6B1530">Quem prova, se apaixona</h2>
+        <p style="color:#5A2B3A;font-size:17px;line-height:1.5;margin:0">Veja o carinho de quem escolheu a Doce Lar para celebrar momentos felizes.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px">
+        <div class="testimonial-card">
+          <div style="display:flex;gap:4px;color:#F4B823;font-size:18px">⭐⭐⭐⭐⭐</div>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#3A0A1A;font-style:italic">
+            "O bolo de morango foi a atração principal do aniversário de 1 ano da minha filha! Massa incrivelmente leve, creme com doçura na medida certa e muitos morangos frescos. Todos os convidados pediram o contato!"
+          </p>
+          <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(107,21,48,0.1);padding-top:16px">
+            <div style="width:40px;height:40px;border-radius:50%;background:#6B1530;color:#FFF6E5;display:flex;align-items:center;justify-content:center;font-weight:700">JM</div>
+            <div>
+              <div style="font-weight:700;font-size:15px;color:#6B1530">Juliana Mendes</div>
+              <div style="font-size:13px;color:#6B5058">Aniversário Infantil</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div style="display:flex;gap:4px;color:#F4B823;font-size:18px">⭐⭐⭐⭐⭐</div>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#3A0A1A;font-style:italic">
+            "Os brigadeiros gourmet de pistache e chocolate belga são de outro mundo. Derretem na boca! Já fiz 3 encomendas para comemorações da empresa e sempre superam as expectativas."
+          </p>
+          <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(107,21,48,0.1);padding-top:16px">
+            <div style="width:40px;height:40px;border-radius:50%;background:#6B1530;color:#FFF6E5;display:flex;align-items:center;justify-content:center;font-weight:700">CE</div>
+            <div>
+              <div style="font-weight:700;font-size:15px;color:#6B1530">Carlos Eduardo</div>
+              <div style="font-size:13px;color:#6B5058">Eventos Corporativos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div style="display:flex;gap:4px;color:#F4B823;font-size:18px">⭐⭐⭐⭐⭐</div>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#3A0A1A;font-style:italic">
+            "A cheesecake de frutas vermelhas foi um sucesso no jantar de família. A apresentação é de confeitaria de novela e o sabor é inesquecível. Entrega no horário certinho e embalagem impecável!"
+          </p>
+          <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(107,21,48,0.1);padding-top:16px">
+            <div style="width:40px;height:40px;border-radius:50%;background:#6B1530;color:#FFF6E5;display:flex;align-items:center;justify-content:center;font-weight:700">BV</div>
+            <div>
+              <div style="font-weight:700;font-size:15px;color:#6B1530">Beatriz Vasconcelos</div>
+              <div style="font-size:13px;color:#6B5058">Jantar em Família</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 DÚVIDAS FREQUENTES (FAQ) -->
+  <section id="faq" style="padding:clamp(64px,8vw,96px) clamp(20px,6vw,88px)">
+    <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:36px">
+      <div style="text-align:center">
+        <span style="font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6B1530">Tire Suas Dúvidas</span>
+        <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(30px,4vw,44px);margin:8px 0 12px;color:#6B1530">Perguntas Frequentes</h2>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span>Com quanta antecedência devo fazer meu pedido?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p style="margin:14px 0 0;line-height:1.6;color:#5A2B3A">
+            Para bolos tradicionais, cupcakes e caixas de brigadeiros, recomendamos pelo menos <strong>48 horas de antecedência</strong>. Para bolos personalizados de festa, casamentos ou grandes encomendas de centos, sugerimos de <strong>5 a 10 dias úteis</strong> para garantir sua vaga na agenda.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Vocês realizam entregas em domicílio?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p style="margin:14px 0 0;line-height:1.6;color:#5A2B3A">
+            Sim! Realizamos entregas em toda a cidade e bairros vizinhos com taxa calculada conforme a distância. Nossos doces viajam em caixas térmicas e reforçadas para garantir que cheguem intactos e perfeitos. Você também pode optar por retirar gratuitamente em nosso ateliê.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Quais são as opções de pagamento?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p style="margin:14px 0 0;line-height:1.6;color:#5A2B3A">
+            Aceitamos <strong>Pix</strong>, cartões de crédito (em até 3x sem juros dependendo do valor) e débito. A reserva da data da sua encomenda é confirmada mediante sinal de 50%, e o restante pode ser quitado na entrega ou retirada.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Posso escolher a decoração e topo personalizado?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p style="margin:14px 0 0;line-height:1.6;color:#5A2B3A">
+            Com certeza! Trabalhamos com decorações florais naturais, morangos frescos, topos personalizados em papelaria especial, detalhes em folha de ouro comestível e paleta de cores à sua escolha para combinar com o tema do seu evento.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 SOBRE E CONTATO -->
+  <section id="contato" data-screen-label="03 Sobre e contato" style="background:#6B1530;color:#FFF6E5;padding:80px clamp(20px,6vw,88px) 36px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(40px,6vw,64px)">
+      
+      <!-- Informações da Confeitaria -->
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div>
+          <span style="font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#F4B823">Visite o Ateliê</span>
+          <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,4vw,48px);margin:10px 0 0;color:#F4B823">Sobre a Doce Lar</h2>
+        </div>
+        <p style="font-size:20px;line-height:1.55;margin:0;max-width:480px;color:rgba(255,246,229,0.95)">
+          Nossa missão é transformar açúcar, afeto e ingredientes nobres em sorrisos inesquecíveis ao redor da mesa.
+        </p>
+
+        <dl style="margin:8px 0 0;display:grid;grid-template-columns:auto 1fr;gap:18px 24px;font-size:16px;line-height:1.5;align-content:start">
+          <dt style="color:#F4B823;font-weight:700">Endereço</dt>
+          <dd style="margin:0">Rua das Flores, 123 – Centro<br>São Paulo – SP, CEP 01000-000</dd>
+
+          <dt style="color:#F4B823;font-weight:700">Horários</dt>
+          <dd style="margin:0">Seg a Sex: 09h às 18h<br>Sábados: 09h às 14h (retiradas)</dd>
+
+          <dt style="color:#F4B823;font-weight:700">WhatsApp</dt>
+          <dd style="margin:0"><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" style="color:#FFF6E5;font-weight:600;text-decoration:underline;text-underline-offset:3px">(11) 99999-9999</a></dd>
+
+          <dt style="color:#F4B823;font-weight:700">Instagram</dt>
+          <dd style="margin:0"><a href="https://instagram.com/docelar" target="_blank" rel="noopener noreferrer" style="color:#FFF6E5;font-weight:600;text-decoration:underline;text-underline-offset:3px">@docelar.confeitaria</a></dd>
+        </dl>
+
+        <div style="margin-top:8px">
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20encomenda%20com%20a%20Doce%20Lar." target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>Fazer Pedido pelo WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mapa Interativo e Localização -->
+      <div style="position:relative;min-height:360px;border-radius:24px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,0.3);border:2px solid rgba(244,184,35,0.3)">
+        <iframe
+          title="Localização da Doce Lar Confeitaria"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-46.66%2C-23.57%2C-46.62%2C-23.54&amp;layer=mapnik"
+          style="position:absolute;inset:0;width:100%;height:100%;border:0"
+          loading="lazy">
+        </iframe>
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=Rua+das+Flores+123+Centro+Sao+Paulo"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="position:absolute;left:16px;bottom:16px;padding:12px 20px;border-radius:999px;background:#FFF6E5;color:#3A0A1A;font-weight:700;font-size:14px;box-shadow:0 6px 18px rgba(0,0,0,0.35);display:inline-flex;align-items:center;gap:6px">
+          <span>Abrir no Google Maps ↗</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <div style="max-width:1200px;margin:64px auto 0;padding-top:24px;border-top:1px solid rgba(244,184,35,0.3);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:rgba(255,246,229,0.8)">
+      <div>© 2026 Doce Lar Confeitaria Artesanal. Todos os direitos reservados.</div>
+      <div style="display:flex;gap:20px">
+        <a href="#destaques" style="color:rgba(255,246,229,0.8)">Cardápio</a>
+        <a href="#contato" style="color:rgba(255,246,229,0.8)">Atendimento</a>
+        <span style="color:#F4B823">docelar.com.br</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTÃO FLUTUANTE DE WHATSAPP -->
+  <aside>
+    <a
+      href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20encomenda%20na%20Doce%20Lar."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="floating-whatsapp"
+      aria-label="Fale conosco pelo WhatsApp">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+      <span>Encomendar no WhatsApp</span>
+    </a>
+  </aside>
+
+</div>
+</x-dc>
+</body>
+</html>
